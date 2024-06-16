@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 
 import jakarta.servlet.http.HttpSession;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
@@ -24,18 +26,21 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody User user, HttpSession session) {
-        try {
-            Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword())
-            );
-            SecurityContextHolder.getContext().setAuthentication(authentication);
+        Optional<User> existingUserOptional = userService.findByEmail(user.getEmail());
+        if (existingUserOptional.isPresent()) {
+            User existingUser = existingUserOptional.get();
+            if (userService.checkPassword(existingUser, user.getPassword())) {
+                Authentication authentication = authenticationManager.authenticate(
+                        new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword())
+                );
+                SecurityContextHolder.getContext().setAuthentication(authentication);
 
-            session.setAttribute("loggedInUser", user.getEmail());
+                session.setAttribute("loggedInUser", user.getEmail());
 
-            return ResponseEntity.ok("Login successful");
-        } catch (Exception e) {
-            return ResponseEntity.status(401).body("Invalid email or password");
+                return ResponseEntity.ok("Login successful");
+            }
         }
+        return ResponseEntity.status(401).body("Invalid email or password");
     }
 
     @PostMapping("/register")

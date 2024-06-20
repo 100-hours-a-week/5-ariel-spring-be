@@ -1,0 +1,15 @@
+
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$56fd5f0e-517a-49cf-81f0-c785873e0c1a
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$55a3c120-3239-44b9-a54f-7d67a1a44fc5
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$667ad588-53f6-4a78-9782-74f106b465db
+~
+java:S6813""BRemove this field injection and use constructor injection instead.(êæÄŞJ$44b1b743-81ab-4f72-8a78-e211b4e6b886
+n
+java:S1452&"&Remove usage of generic wildcard type.(Ş¡õÂùÿÿÿÿ8ÊöÂ­ƒ2J$ee9b27a7-765a-4793-b86a-088bb7ae80bd
+˜
+java:S6201)"PReplace this instanceof check and cast with 'instanceof UserDetails userdetails'(¶Ş¿Œıÿÿÿÿ8ÊöÂ­ƒ2J$4685784a-2562-46e3-a156-cf4158df4c88
+f	java:S106G"+Replace this use of System.out by a logger.(°ƒ®J$166f8809-a908-4c1e-950d-c442284e360f
+f	java:S106J"+Replace this use of System.out by a logger.(¤àƒJ$f7647433-1869-469c-a62c-a1e46a87256b

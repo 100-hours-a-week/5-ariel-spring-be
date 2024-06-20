@@ -38,6 +38,9 @@ public class PostService {
         postDTO.setContent(post.getContent());
         postDTO.setImagePath(post.getImagePath());
         postDTO.setCreatedAt(post.getCreatedAt());
+        postDTO.setLikesCount(post.getLikesCount());
+        postDTO.setCommentsCount(post.getCommentsCount());
+        postDTO.setViewsCount(post.getViewsCount());
 
         UserDTO userDTO = new UserDTO();
         userDTO.setUserId(post.getUser().getUserId());
@@ -49,6 +52,7 @@ public class PostService {
 
         return postDTO;
     }
+
 
     public Post getPostById(Long id) {
         Optional<Post> post = postRepository.findById(id);

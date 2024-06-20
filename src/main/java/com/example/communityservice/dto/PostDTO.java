@@ -8,6 +8,9 @@ public class PostDTO {
     private String content;
     private String imagePath;
     private Date createdAt;
+    private int likesCount;
+    private int commentsCount;
+    private int viewsCount;
     private UserDTO user;
 
     // Getters and setters
@@ -50,6 +53,30 @@ public class PostDTO {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public int getLikesCount() {
+        return likesCount;
+    }
+
+    public void setLikesCount(int likesCount) {
+        this.likesCount = likesCount;
+    }
+
+    public int getCommentsCount() {
+        return commentsCount;
+    }
+
+    public void setCommentsCount(int commentsCount) {
+        this.commentsCount = commentsCount;
+    }
+
+    public int getViewsCount() {
+        return viewsCount;
+    }
+
+    public void setViewsCount(int viewsCount) {
+        this.viewsCount = viewsCount;
     }
 
     public UserDTO getUser() {

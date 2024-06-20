@@ -10,6 +10,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -36,12 +37,17 @@ public class AuthController {
     @GetMapping("/get-profile-image")
     public ResponseEntity<?> getProfileImage() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String email = (String) authentication.getPrincipal();
+        String email;
+        if (authentication.getPrincipal() instanceof UserDetails) {
+            email = ((UserDetails) authentication.getPrincipal()).getUsername();
+        } else {
+            email = authentication.getPrincipal().toString();
+        }
 
         Optional<User> userOptional = userService.findByEmail(email);
         if (userOptional.isPresent()) {
             User user = userOptional.get();
-            String profileImagePath = "http://localhost:8080/" + user.getProfilePicture();
+            String profileImagePath = "http://localhost:8080/uploads/" + user.getProfilePicture();
             return ResponseEntity.ok().body(Map.of("profileImagePath", profileImagePath));
         } else {
             return ResponseEntity.status(404).body("User not found");

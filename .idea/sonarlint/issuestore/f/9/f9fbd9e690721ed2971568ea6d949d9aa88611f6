@@ -1,0 +1,6 @@
+
+Ñ
+java:S4449!"Annotate the parameter with @javax.annotation.Nullable in method 'cleanPath' declaration, or make sure that null can not be passed as argument.(ó¹À…üÿÿÿÿJ$abccf55a-ef1e-4533-afbe-efa38a43fe77
+	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Î‹˜J$db628c80-9a6d-421b-a166-b0c5c6027975
+†	java:S112&"FDefine and throw a dedicated exception instead of using a generic one.(©ë÷ÈşÿÿÿÿJ$23a0de38-31dc-44d3-a537-aad69c0b8dc1
+†	java:S112/"FDefine and throw a dedicated exception instead of using a generic one.(Æ¥¢—şÿÿÿÿJ$21db6798-3193-471c-9431-12cf78301c4b

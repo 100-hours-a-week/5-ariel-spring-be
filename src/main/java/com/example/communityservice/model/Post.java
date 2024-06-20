@@ -23,6 +23,15 @@ public class Post {
     @Column(nullable = false)
     private Date createdAt;
 
+    @Column(nullable = false, columnDefinition = "int default 0")
+    private int likesCount;
+
+    @Column(nullable = false, columnDefinition = "int default 0")
+    private int commentsCount;
+
+    @Column(nullable = false, columnDefinition = "int default 0")
+    private int viewsCount;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
@@ -67,6 +76,30 @@ public class Post {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public int getLikesCount() {
+        return likesCount;
+    }
+
+    public void setLikesCount(int likesCount) {
+        this.likesCount = likesCount;
+    }
+
+    public int getCommentsCount() {
+        return commentsCount;
+    }
+
+    public void setCommentsCount(int commentsCount) {
+        this.commentsCount = commentsCount;
+    }
+
+    public int getViewsCount() {
+        return viewsCount;
+    }
+
+    public void setViewsCount(int viewsCount) {
+        this.viewsCount = viewsCount;
     }
 
     public User getUser() {

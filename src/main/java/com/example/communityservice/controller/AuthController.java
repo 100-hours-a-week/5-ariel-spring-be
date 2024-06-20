@@ -1,6 +1,7 @@
 package com.example.communityservice.controller;
 
 import com.example.communityservice.model.User;
+import com.example.communityservice.security.JwtTokenProvider;
 import com.example.communityservice.service.FileStorageService;
 import com.example.communityservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +13,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import jakarta.servlet.http.HttpSession;
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -29,10 +28,28 @@ public class AuthController {
     private UserService userService;
 
     @Autowired
+    private JwtTokenProvider tokenProvider;
+
+    @Autowired
     private FileStorageService fileStorageService;
 
+    @GetMapping("/get-profile-image")
+    public ResponseEntity<?> getProfileImage() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String email = (String) authentication.getPrincipal();
+
+        Optional<User> userOptional = userService.findByEmail(email);
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            String profileImagePath = "http://localhost:8080/" + user.getProfilePicture();
+            return ResponseEntity.ok().body(Map.of("profileImagePath", profileImagePath));
+        } else {
+            return ResponseEntity.status(404).body("User not found");
+        }
+    }
+
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody User user, HttpSession session) {
+    public ResponseEntity<String> login(@RequestBody User user) {
         Optional<User> existingUserOptional = userService.findByEmail(user.getEmail());
         if (existingUserOptional.isPresent()) {
             User existingUser = existingUserOptional.get();
@@ -42,13 +59,17 @@ public class AuthController {
                 );
                 SecurityContextHolder.getContext().setAuthentication(authentication);
 
-                session.setAttribute("loggedInUser", user.getEmail());
-
-                return ResponseEntity.ok("Login successful");
+                String jwt = tokenProvider.generateToken(authentication);
+                return ResponseEntity.ok(jwt);
+            } else {
+                System.out.println("Password mismatch");
             }
+        } else {
+            System.out.println("User not found with email: " + user.getEmail());
         }
         return ResponseEntity.status(401).body("Invalid email or password");
     }
+
 
     @PostMapping("/register")
     public ResponseEntity<String> register(
@@ -82,5 +103,10 @@ public class AuthController {
     public ResponseEntity<List<User>> getUsers() {
         List<User> users = userService.getAllUsers();
         return ResponseEntity.ok(users);
+    }
+
+    @GetMapping("/list-of-posts")
+    public ResponseEntity<String> listOfPosts() {
+        return ResponseEntity.ok("List of posts page");
     }
 }

@@ -1,11 +1,11 @@
 
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8é¿øƒ2J$0cebd583-282c-4673-82c4-8c40b8e93ee1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8é¿øƒ2J$c3a53303-b1ec-4513-8b80-c77f8c1aa3ff
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8é¿øƒ2J$d1d9fd97-83b0-45c4-ba00-b9d6129858ca
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8é¿øƒ2J$70cbfaec-81fd-47b5-b076-87f70c45a0c4
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8é¿øƒ2J$04e567d4-39fd-4670-bfb2-a8085372bb07
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8é¿øƒ2J$208c369d-5828-4a92-924f-f5a1f5d38b21
 ½
-java:S6204#"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ÀÜ¤Ç8‘é¿øƒ2J$21fba0bb-8dfe-4207-9ebb-baee8cd2e849
+java:S6204#"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ÀÜ¤Ç8‘é¿øƒ2J$cbb0afc4-347b-410f-bf04-33846a56fed3
 m
-java:S1068"*Remove this unused "logger" private field.(Àâë·8×œ¾„2J$68b1389f-1449-4eec-9859-939db4558d93
+java:S1068"*Remove this unused "logger" private field.(Àâë·8×œ¾„2J$67899894-a58c-4517-a903-70f8c69ce497

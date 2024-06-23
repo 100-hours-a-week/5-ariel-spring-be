@@ -2,6 +2,7 @@ package com.example.communityservice.controller;
 
 import com.example.communityservice.dto.PostDTO;
 import com.example.communityservice.service.PostService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +11,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory; // 추가된 부분
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/posts")
@@ -65,16 +68,37 @@ public class PostController {
         }
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<String> updatePost(@RequestParam Long postId,
-                                             @RequestParam String title,
-                                             @RequestParam String content,
-                                             @RequestParam(required = false) MultipartFile imageFile) {
-        boolean success = postService.updatePost(postId, title, content, imageFile);
-        if (success) {
-            return ResponseEntity.ok("Post updated successfully");
-        } else {
-            return ResponseEntity.status(500).body("Error updating post");
+    @PostMapping("/update-post")
+    public ResponseEntity<Map<String, Object>> updatePost(
+            @RequestParam Long id,
+            @RequestParam String title,
+            @RequestParam String content,
+            @RequestParam(required = false) MultipartFile imageFile,
+            HttpServletRequest request) {
+        String token = resolveToken(request);
+        if (token == null || !validateToken(token)) {
+            return ResponseEntity.status(401).body(Collections.singletonMap("error", "Unauthorized"));
         }
+
+        boolean success = postService.updatePost(id, title, content, imageFile);
+        if (success) {
+            return ResponseEntity.ok(Collections.singletonMap("success", true));
+        } else {
+            return ResponseEntity.status(500).body(Collections.singletonMap("error", "Error updating post"));
+        }
+    }
+
+
+    private String resolveToken(HttpServletRequest request) {
+        String bearerToken = request.getHeader("Authorization");
+        if (bearerToken != null && bearerToken.startsWith("Bearer ")) {
+            return bearerToken.substring(7);
+        }
+        return null;
+    }
+
+    private boolean validateToken(String token) {
+        // Implement your token validation logic here
+        return true; // Return true if valid, false otherwise
     }
 }

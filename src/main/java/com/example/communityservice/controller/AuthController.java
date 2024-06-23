@@ -1,10 +1,14 @@
 package com.example.communityservice.controller;
 
+import com.example.communityservice.dto.UserDTO;
 import com.example.communityservice.model.User;
+import com.example.communityservice.repository.UserRepository;
 import com.example.communityservice.security.JwtTokenProvider;
 import com.example.communityservice.service.FileStorageService;
 import com.example.communityservice.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -29,10 +33,32 @@ public class AuthController {
     private UserService userService;
 
     @Autowired
-    private JwtTokenProvider tokenProvider;
+    private JwtTokenProvider jwtTokenProvider;
 
     @Autowired
     private FileStorageService fileStorageService;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @GetMapping("/user-info")
+    public ResponseEntity<UserDTO> getUserInfo(HttpServletRequest request) {
+        String token = jwtTokenProvider.resolveToken(request);
+        if (token != null && jwtTokenProvider.validateToken(token)) {
+            String email = jwtTokenProvider.getUsername(token);
+            Optional<User> userOptional = userRepository.findByEmail(email);
+            if (userOptional.isPresent()) {
+                User user = userOptional.get();
+                UserDTO userDTO = new UserDTO();
+                userDTO.setUserId(user.getUserId());
+                userDTO.setEmail(user.getEmail());
+                userDTO.setNickname(user.getNickname());
+                userDTO.setProfilePicture(user.getProfilePicture());
+                return ResponseEntity.ok(userDTO);
+            }
+        }
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+    }
 
     @GetMapping("/get-profile-image")
     public ResponseEntity<?> getProfileImage() {
@@ -65,7 +91,7 @@ public class AuthController {
                 );
                 SecurityContextHolder.getContext().setAuthentication(authentication);
 
-                String jwt = tokenProvider.generateToken(authentication);
+                String jwt = jwtTokenProvider.generateToken(authentication);
                 return ResponseEntity.ok(jwt);
             } else {
                 System.out.println("Password mismatch");

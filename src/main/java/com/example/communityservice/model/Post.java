@@ -1,6 +1,7 @@
 package com.example.communityservice.model;
 
 import jakarta.persistence.*;
+
 import java.util.Date;
 
 @Entity
@@ -14,11 +15,11 @@ public class Post {
     @Column(nullable = false)
     private String title;
 
-    @Column(nullable = false)
-    private String content;
+    @Column(nullable = false, columnDefinition = "TEXT")
+    private String postContent;
 
     @Column(nullable = true)
-    private String imagePath;
+    private String postImage;
 
     @Column(nullable = false)
     private Date createdAt;
@@ -54,20 +55,20 @@ public class Post {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
+    public String getPostContent() {
+        return postContent;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setPostContent(String postContent) {
+        this.postContent = postContent;
     }
 
-    public String getImagePath() {
-        return imagePath;
+    public String getPostImage() {
+        return postImage;
     }
 
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
+    public void setPostImage(String postImage) {
+        this.postImage = postImage;
     }
 
     public Date getCreatedAt() {

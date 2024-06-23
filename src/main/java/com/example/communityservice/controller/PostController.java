@@ -1,19 +1,22 @@
 package com.example.communityservice.controller;
 
 import com.example.communityservice.dto.PostDTO;
-import com.example.communityservice.model.Post;
 import com.example.communityservice.service.PostService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory; // 추가된 부분
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/posts")
 public class PostController {
+
+    private static final Logger logger = LoggerFactory.getLogger(PostController.class);
 
     @Autowired
     private PostService postService;
@@ -24,13 +27,17 @@ public class PostController {
         return ResponseEntity.ok(posts);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Post> getPostById(@PathVariable Long id) {
-        Post post = postService.getPostById(id);
-        if (post != null) {
-            return ResponseEntity.ok(post);
+    @GetMapping("/{postId}")
+    public ResponseEntity<PostDTO> getPostById(@PathVariable Long postId) {
+        logger.debug("Fetching post with ID: {}", postId);
+        PostDTO postDTO = postService.getPostById(postId);
+        if (postDTO != null) {
+            logger.debug("Post found: {}", postDTO);
+            logger.debug("Post imagePath: {}, Post content: {}", postDTO.getPostImage(), postDTO.getPostContent());
+            return ResponseEntity.ok(postDTO);
         } else {
-            return ResponseEntity.status(404).body(null);
+            logger.debug("Post not found for ID: {}", postId);
+            return ResponseEntity.notFound().build();
         }
     }
 

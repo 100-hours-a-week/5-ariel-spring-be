@@ -5,6 +5,7 @@ import com.example.communityservice.service.PostService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -58,13 +59,13 @@ public class PostController {
         }
     }
 
-    @DeleteMapping("/delete")
-    public ResponseEntity<String> deletePost(@RequestParam Long postId) {
+    @DeleteMapping("/{postId}")
+    public ResponseEntity<Map<String, Object>> deletePost(@PathVariable Long postId) {
         boolean success = postService.deletePost(postId);
         if (success) {
-            return ResponseEntity.ok("Post deleted successfully");
+            return ResponseEntity.ok(Collections.singletonMap("success", true));
         } else {
-            return ResponseEntity.status(404).body("Post not found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Collections.singletonMap("success", false));
         }
     }
 

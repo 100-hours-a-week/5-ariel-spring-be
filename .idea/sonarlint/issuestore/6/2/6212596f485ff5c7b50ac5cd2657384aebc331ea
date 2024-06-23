@@ -1,9 +1,11 @@
 
 {
-java:S2589O"8Remove this expression which always evaluates to "false"(Äïˆû8·ÉË „2J$9deb4239-ffe4-4b1a-b149-eddd8612e45c
+java:S2589P"8Remove this expression which always evaluates to "false"(Äïˆû8·ÉË „2J$305e9af6-c7e5-484b-84c9-467ed84b0769
+‹
+java:S1192B"HDefine a constant instead of duplicating this literal "success" 3 times.(ˆâ½˜8‰«İ®„2J$d9b27bc1-b33c-4a64-90bc-3751961d74c8
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8²­Íõƒ2J$59f89527-4529-462b-964a-fdb7af877239
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8²­Íõƒ2J$10265bed-cd41-43e0-b206-9400c54b57c7
 |
-java:S3400f"9Remove this method and declare a constant for this value.(âÌĞË8àãòŸ„2J$d00837c4-882b-4031-9722-d95f0c0d1951
+java:S3400g"9Remove this method and declare a constant for this value.(âÌĞË8àãòŸ„2J$92939358-db90-4be8-be69-bc2edc92f914
 o
-java:S1172d",Remove this unused method parameter "token".(—ÜÈ™8áãòŸ„2J$f021098a-36ea-4c6b-a2e4-33120f6a7390
+java:S1172e",Remove this unused method parameter "token".(—ÜÈ™8áãòŸ„2J$4c8a82eb-eaf2-4762-a68e-3b777d1bf802

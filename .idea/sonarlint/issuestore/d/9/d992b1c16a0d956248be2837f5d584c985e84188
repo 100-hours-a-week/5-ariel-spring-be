@@ -1,17 +1,17 @@
 
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$712a9fb1-7eee-47e7-b80e-80c39ea53b9f
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$c70e7bf3-34bd-42cd-99b3-a7e118f24e60
 ~
-java:S6813 "BRemove this field injection and use constructor injection instead.(êæÄŞJ$ec306374-086a-44f8-b285-0df0b7133c95
+java:S6813 "BRemove this field injection and use constructor injection instead.(êæÄŞJ$448bfbfc-b97b-47e4-b8e0-07df75c1228b
 ~
-java:S6813#"BRemove this field injection and use constructor injection instead.(êæÄŞJ$94b84ad1-3c60-4122-ae17-c3960b66a30f
+java:S6813#"BRemove this field injection and use constructor injection instead.(êæÄŞJ$c0ec84b7-5259-4461-b067-6f62e9811388
 ~
-java:S6813&"BRemove this field injection and use constructor injection instead.(êæÄŞJ$646dedda-c736-480e-849c-6423f4ef2a47
+java:S6813&"BRemove this field injection and use constructor injection instead.(êæÄŞJ$530e1998-706f-40ba-a4a0-44ab28180b02
 …
-java:S6813)"BRemove this field injection and use constructor injection instead.(êæÄŞ8‚ğæ„2J$e3c485f2-dd46-435a-b607-ec8adfac9167
+java:S6813)"BRemove this field injection and use constructor injection instead.(êæÄŞ8‚ğæ„2J$23cbcafb-11b3-4cd4-ae69-9eb04788aaaf
 n
-java:S1452@"&Remove usage of generic wildcard type.(Ş¡õÂùÿÿÿÿ8ÊöÂ­ƒ2J$54535336-75b4-4723-b79a-48e6058f1e4b
+java:S1452@"&Remove usage of generic wildcard type.(Ş¡õÂùÿÿÿÿ8ÊöÂ­ƒ2J$c74cecdf-b5a1-4056-9960-a9f42fd76730
 ˜
-java:S6201C"PReplace this instanceof check and cast with 'instanceof UserDetails userdetails'(¶Ş¿Œıÿÿÿÿ8ÊöÂ­ƒ2J$d37d8df2-217b-4146-98d7-fc4567cf6855
-f	java:S106a"+Replace this use of System.out by a logger.(°ƒ®J$351b1713-286b-4f1f-b085-d21482b1e61f
-f	java:S106d"+Replace this use of System.out by a logger.(¤àƒJ$e8ff0d1a-83ac-4817-a10c-4e9c5f78bb4a
+java:S6201C"PReplace this instanceof check and cast with 'instanceof UserDetails userdetails'(¶Ş¿Œıÿÿÿÿ8ÊöÂ­ƒ2J$0805f441-c150-4eb6-a164-80b9c41b229c
+f	java:S106a"+Replace this use of System.out by a logger.(°ƒ®J$bd4111fc-801b-416c-a74a-ed33db55a2d1
+f	java:S106d"+Replace this use of System.out by a logger.(¤àƒJ$aa5266c5-ff15-45cb-a14d-03efbd09e75c

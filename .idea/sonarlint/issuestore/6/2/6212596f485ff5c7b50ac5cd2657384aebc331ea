@@ -1,11 +1,29 @@
 
 {
-java:S2589P"8Remove this expression which always evaluates to "false"(Äïˆû8·ÉË „2J$305e9af6-c7e5-484b-84c9-467ed84b0769
+java:S2589q"8Remove this expression which always evaluates to "false"(Äïˆû8î‘¤Á„2J$9b3f1424-267b-4603-8f33-039c30c37fcd
+‰
+java:S1192r"FDefine a constant instead of duplicating this literal "error" 3 times.(ıø»¥8¹š°Á„2J$61f229e4-5e8b-4326-ad12-d8bbd9481a64
+
+java:S1192\"HDefine a constant instead of duplicating this literal "message" 4 times.(èÔ« ûÿÿÿÿ8éî¼À„2J$e1d188e8-6347-4751-8ed5-4251521ede8b
 ‹
-java:S1192B"HDefine a constant instead of duplicating this literal "success" 3 times.(ˆâ½˜8‰«İ®„2J$d9b27bc1-b33c-4a64-90bc-3751961d74c8
+java:S1192D"HDefine a constant instead of duplicating this literal "success" 3 times.(ˆâ½˜8·å­À„2J$90861238-f8b6-4ee2-883d-ded9b06a850a
+•
+java:S1192a"MDefine a constant instead of duplicating this literal "Unauthorized" 4 times.(‹ôÕÀüÿÿÿÿ8Ã·¼À„2J$1d84027e-d8e4-4b8f-9c19-c39c52500fa9
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8²­Íõƒ2J$10265bed-cd41-43e0-b206-9400c54b57c7
-|
-java:S3400g"9Remove this method and declare a constant for this value.(âÌĞË8àãòŸ„2J$92939358-db90-4be8-be69-bc2edc92f914
-o
-java:S1172e",Remove this unused method parameter "token".(—ÜÈ™8áãòŸ„2J$4c8a82eb-eaf2-4762-a68e-3b777d1bf802
+java:S6813 "BRemove this field injection and use constructor injection instead.(êæÄŞ8¸å­À„2J$ace64719-6081-4722-ae5a-c2209ef4ad42
+…
+java:S6813#"BRemove this field injection and use constructor injection instead.(êæÄŞ8¸å­À„2J$e759d7c2-a9b9-4bd1-976e-32150520e3c1
+…
+java:S6813&"BRemove this field injection and use constructor injection instead.(êæÄŞ8¸å­À„2J$9542e6e5-e67e-420b-9204-ec0563bbcebf
+…
+java:S6813)"BRemove this field injection and use constructor injection instead.(êæÄŞ8¸å­À„2J$e8e09093-4a9c-428b-bbe7-00e2b16d96ab
+}
+java:S3400˜"9Remove this method and declare a constant for this value.(âÌĞË8Äå­À„2J$235a36bc-98c5-4c6b-93b3-9521bc6ab7e1
+p
+java:S1172–",Remove this unused method parameter "token".(—ÜÈ™8Åå­À„2J$1b88c2aa-f866-4f12-a961-136a6d58b73d
+Œ
+java:S1128"DRemove this unused import 'com.example.communityservice.model.Post'.(¯¥ÚŒıÿÿÿÿ8µÂ¶Ä„2J$5ea10a09-fe1b-4169-a8de-dcfaae36702f
+
+java:S1128"=Remove this unused import 'jakarta.servlet.http.HttpSession'.(Çê°8µÂ¶Ä„2J$4cd8c9bf-df9c-4c33-9092-cfb9439bf445
+x
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8µÂ¶Ä„2J$39d85edc-4c8a-47ce-bb53-a35f4b52f765

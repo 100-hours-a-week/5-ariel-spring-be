@@ -12,6 +12,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -73,16 +75,16 @@ public class PostService {
         return postDTO;
     }
 
-    public boolean createPost(String title, String content, MultipartFile imageFile, String userEmail) {
+    public boolean createPost(String title, String content, String imagePath, String userEmail) {
         Optional<User> userOptional = userRepository.findByEmail(userEmail);
         if (userOptional.isPresent()) {
             User user = userOptional.get();
-            String imagePath = imageFile != null ? fileStorageService.storeFile(imageFile) : null;
 
             Post post = new Post();
             post.setTitle(title);
             post.setPostContent(content);
             post.setPostImage(imagePath);
+            post.setCreatedAt(new Date());
             post.setUser(user);
 
             postRepository.save(post);
@@ -100,16 +102,16 @@ public class PostService {
         return false;
     }
 
-    public boolean updatePost(Long postId, String title, String content, MultipartFile imageFile) {
+    public boolean updatePost(Long postId, String title, String content, String imagePath) {
         Optional<Post> postOptional = postRepository.findById(postId);
         if (postOptional.isPresent()) {
             Post post = postOptional.get();
             post.setTitle(title);
             post.setPostContent(content);
 
-            if (imageFile != null) {
-                String imagePath = fileStorageService.storeFile(imageFile);
+            if (imagePath != null) {
                 post.setPostImage(imagePath);
+                logger.debug("Updated imagePath: {}", imagePath);
             }
 
             postRepository.save(post);
@@ -117,4 +119,5 @@ public class PostService {
         }
         return false;
     }
+
 }

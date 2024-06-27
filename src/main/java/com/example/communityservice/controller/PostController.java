@@ -1,10 +1,12 @@
 package com.example.communityservice.controller;
 
+import com.example.communityservice.dto.CommentDTO;
 import com.example.communityservice.dto.PostDTO;
 import com.example.communityservice.model.Post;
 import com.example.communityservice.model.User;
 import com.example.communityservice.repository.UserRepository;
 import com.example.communityservice.security.JwtTokenProvider;
+import com.example.communityservice.service.CommentService;
 import com.example.communityservice.service.FileStorageService;
 import com.example.communityservice.service.PostService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -33,6 +35,9 @@ public class PostController {
     private PostService postService;
 
     @Autowired
+    private CommentService commentService;
+
+    @Autowired
     private FileStorageService fileStorageService;
 
     @Autowired
@@ -59,6 +64,13 @@ public class PostController {
             logger.debug("Post not found for ID: {}", postId);
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/{postId}/comments")
+    public ResponseEntity<List<CommentDTO>> getCommentsByPostId(@PathVariable Long postId) {
+        List<CommentDTO> comments = commentService.getCommentsByPostId(postId);
+        comments.forEach(comment -> logger.debug("Comment: {}", comment.getContent())); // 로그에 출력
+        return ResponseEntity.ok(comments);
     }
 
     @DeleteMapping("/{postId}")

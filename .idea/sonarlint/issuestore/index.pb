@@ -755,3 +755,5 @@ w
 G.idea/sonarlint/issuestore/c/f/cfe44443c9ca81fe4fc22756547119107a6abc07,d/5/d5a105e15091fc79db55c4c1442737cd32a4ca7c
 w
 G.idea/sonarlint/issuestore/c/9/c95740aecd481f856c4db0281378b18fe81c01a4,3/c/3cddc327a8994c9c719e9de2040b22f987e5e01d
+|
+Lsrc/main/java/com/example/communityservice/controller/CommentController.java,3/8/38f61bfd0de13b6efcf5c9af6c212406c3b9ac31

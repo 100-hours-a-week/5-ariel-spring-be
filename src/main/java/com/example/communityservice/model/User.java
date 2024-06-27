@@ -1,10 +1,7 @@
 package com.example.communityservice.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -18,6 +15,9 @@ public class User {
     private String password;
     private String nickname;
     private String profilePicture;
+
+    @OneToMany(mappedBy = "user")
+    private List<Comment> comments;
 
     // Getters and setters
     public Long getUserId() {

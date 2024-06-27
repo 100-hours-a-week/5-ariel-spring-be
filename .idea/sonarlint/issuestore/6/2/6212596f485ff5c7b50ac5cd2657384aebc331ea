@@ -1,31 +1,31 @@
 
 {
-java:S2589}"8Remove this expression which always evaluates to "false"(Äïˆû8•¢¹…2J$71f63d53-283c-4761-806e-048bf92ab5d8
+java:S2589}"8Remove this expression which always evaluates to "false"(Äïˆû8•¢¹…2J$03e3a17d-964c-48dc-af27-876e927ef2a1
 ‰
-java:S1192~"FDefine a constant instead of duplicating this literal "error" 3 times.(ıø»¥8¹õ¦…2J$b9d73abf-fa67-4bbf-898a-3726acf68369
+java:S1192~"FDefine a constant instead of duplicating this literal "error" 3 times.(ıø»¥8¹õ¦…2J$98f9cce5-9dc1-4e01-b7cb-303b531121fa
 
-java:S1192h"HDefine a constant instead of duplicating this literal "message" 4 times.(èÔ« ûÿÿÿÿ8¹õ¦…2J$cbfa508d-b069-4a32-9263-74401979046b
+java:S1192h"HDefine a constant instead of duplicating this literal "message" 4 times.(èÔ« ûÿÿÿÿ8¹õ¦…2J$0f9fb677-998b-4db1-a7ca-cf16c4a8f519
 ‹
-java:S1192P"HDefine a constant instead of duplicating this literal "success" 3 times.(ˆâ½˜8¹õ¦…2J$1dd40704-76f1-47d7-aba0-7b201d11e2d5
+java:S1192P"HDefine a constant instead of duplicating this literal "success" 3 times.(ˆâ½˜8¹õ¦…2J$cdbd8918-e0c9-47fe-8d28-cda5a14b2d90
 •
-java:S1192m"MDefine a constant instead of duplicating this literal "Unauthorized" 4 times.(‹ôÕÀüÿÿÿÿ8¹õ¦…2J$773a7118-c677-4643-89d1-0dad46c27850
+java:S1192m"MDefine a constant instead of duplicating this literal "Unauthorized" 4 times.(‹ôÕÀüÿÿÿÿ8¹õ¦…2J$867970b4-66c6-4fd6-8802-869763eb699e
 …
-java:S6813""BRemove this field injection and use constructor injection instead.(êæÄŞ8‚¹õ¦…2J$6623b802-5a4a-4d55-b311-e8647f23f65d
+java:S6813""BRemove this field injection and use constructor injection instead.(êæÄŞ8‚¹õ¦…2J$88a7abac-6a23-4509-be31-f87ba7fe5c06
 …
-java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄŞ8‚¹õ¦…2J$c7c30447-b33a-44f5-94ce-d81cfdd9b060
+java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄŞ8‚¹õ¦…2J$d4e98457-f70e-47c1-b87d-d04a230dfbc1
 …
-java:S6813("BRemove this field injection and use constructor injection instead.(êæÄŞ8‚¹õ¦…2J$36e1e43a-b585-4dc8-a0a1-522ddac21309
+java:S6813("BRemove this field injection and use constructor injection instead.(êæÄŞ8‚¹õ¦…2J$c19e4036-fad0-4aad-8746-57480719694a
 …
-java:S6813+"BRemove this field injection and use constructor injection instead.(êæÄŞ8‚¹õ¦…2J$590fb532-06ab-4d7a-996c-68ff388e5b23
+java:S6813+"BRemove this field injection and use constructor injection instead.(êæÄŞ8‚¹õ¦…2J$aa8a4def-c2b4-4ca5-8300-9cc3bf6e0f5f
 …
-java:S6813."BRemove this field injection and use constructor injection instead.(êæÄŞ8å´ª…2J$6f8efa7c-05ea-402a-8144-c930821c7d0f
+java:S6813."BRemove this field injection and use constructor injection instead.(êæÄŞ8å´ª…2J$b2540993-ae68-43a1-8949-5e587484f147
 }
-java:S3400¤"9Remove this method and declare a constant for this value.(âÌĞË8¹õ¦…2J$ca958da9-3401-45c2-9efd-103cd5df3331
+java:S3400¤"9Remove this method and declare a constant for this value.(âÌĞË8¹õ¦…2J$0ed07179-f6d3-430f-879d-227e5f15788c
 p
-java:S1172¢",Remove this unused method parameter "token".(—ÜÈ™8¹õ¦…2J$d8ab9eaa-2069-4a93-a70a-ed43c06ffe26
+java:S1172¢",Remove this unused method parameter "token".(—ÜÈ™8¹õ¦…2J$84e99f61-8106-463b-b344-66d31443ec78
 Œ
-java:S1128"DRemove this unused import 'com.example.communityservice.model.Post'.(¯¥ÚŒıÿÿÿÿ8Ä¢¹…2J$362db848-011e-4ead-b1b7-c0c5c049cd87
+java:S1128"DRemove this unused import 'com.example.communityservice.model.Post'.(¯¥ÚŒıÿÿÿÿ8Ä¢¹…2J$06737cc3-1f90-47a4-8c4c-56b89adbcdde
 
-java:S1128"=Remove this unused import 'jakarta.servlet.http.HttpSession'.(Çê°8Ä¢¹…2J$4b57e3ae-a95c-45cf-9f3a-e43947e462ab
+java:S1128"=Remove this unused import 'jakarta.servlet.http.HttpSession'.(Çê°8Ä¢¹…2J$67562a2e-159e-4da0-bc5e-734a71cff7a1
 x
-java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8Ä¢¹…2J$b247252b-8ba3-4c62-93b6-e548943d7d83
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8Ä¢¹…2J$210dfb28-5811-452a-a5ed-393548c4e40e

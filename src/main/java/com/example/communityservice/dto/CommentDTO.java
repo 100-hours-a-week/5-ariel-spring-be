@@ -2,16 +2,20 @@ package com.example.communityservice.dto;
 
 import com.example.communityservice.model.Comment;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class CommentDTO {
 
     private Long commentId;
     private String content;
-    private Date createdAt;
+    private LocalDateTime createdAt;
     private String authorNickname;
     private String authorProfilePicture;
     private String authorEmail;
+    private Long postId;
+
+    public CommentDTO() {
+    }
 
     public CommentDTO(Comment comment) {
         this.commentId = comment.getCommentId();
@@ -20,6 +24,7 @@ public class CommentDTO {
         this.authorNickname = comment.getUser().getNickname();
         this.authorProfilePicture = comment.getUser().getProfilePicture();
         this.authorEmail = comment.getUser().getEmail();
+        this.postId = comment.getPost().getPostId();
     }
 
     // Getters and setters
@@ -40,11 +45,11 @@ public class CommentDTO {
         this.content = content;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -70,5 +75,13 @@ public class CommentDTO {
 
     public void setAuthorEmail(String authorEmail) {
         this.authorEmail = authorEmail;
+    }
+
+    public Long getPostId() {
+        return postId;
+    }
+
+    public void setPostId(Long postId) {
+        this.postId = postId;
     }
 }

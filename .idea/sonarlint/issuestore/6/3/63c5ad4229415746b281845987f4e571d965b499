@@ -1,13 +1,13 @@
 
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¦ÿƒõ„2J$3205467e-3fa2-4432-ba26-15358a910f55
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¦ÿƒõ„2J$246fd318-83b7-4ff1-91e9-13291de5e2a5
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8§ÿƒõ„2J$2d76ba86-0bd8-4d00-9d82-3ff1da00087a
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8§ÿƒõ„2J$309b84ce-eef6-47cd-90b1-2dc324321c8b
 …
-java:S6813 "BRemove this field injection and use constructor injection instead.(êæÄŞ8§ÿƒõ„2J$bd65ef98-aef4-4a23-8a60-ebe54c52e144
+java:S6813 "BRemove this field injection and use constructor injection instead.(êæÄŞ8§ÿƒõ„2J$6ab10878-60c4-4639-ad38-fd4d9674aba8
 ½
-java:S6204%"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ÀÜ¤Ç8¨ÿƒõ„2J$95d9292e-07f6-4170-9cc1-5310fb0aedac
-n
-java:S1128"LRemove this unused import 'org.springframework.web.multipart.MultipartFile'.(ôŸœÿÿÿÿÿ8ù¢¹…2
-V
-java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8ù¢¹…2
+java:S6204%"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ÀÜ¤Ç8¨ÿƒõ„2J$514b1621-93a0-43dd-a962-a90ffeab8a87
+”
+java:S1128"LRemove this unused import 'org.springframework.web.multipart.MultipartFile'.(ôŸœÿÿÿÿÿ8ù¢¹…2J$dcf86d28-c265-4450-8e64-677c03dd4a30
+|
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8ù¢¹…2J$87f9f23d-a7c5-4f6b-b47e-c47beadb912d

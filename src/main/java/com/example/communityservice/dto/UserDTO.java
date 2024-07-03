@@ -4,7 +4,9 @@ public class UserDTO {
     private Long userId;
     private String email;
     private String nickname;
+    private String password;
     private String profilePicture;
+    private String error; // 오류 메시지를 위한 필드
 
     // Getters and setters
 
@@ -33,11 +35,27 @@ public class UserDTO {
         this.nickname = nickname;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getProfilePicture() {
         return profilePicture;
     }
 
     public void setProfilePicture(String profilePicture) {
         this.profilePicture = profilePicture;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
     }
 }

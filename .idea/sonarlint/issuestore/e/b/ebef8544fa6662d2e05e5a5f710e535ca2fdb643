@@ -1,6 +1,12 @@
 
+Ó
+java:S44499"ŠAnnotate the parameter with @javax.annotation.Nullable in method 'save' declaration, or make sure that null can not be passed as argument.(¯»”ÿÿÿÿÿ8Îª†‡2J$a7029e24-bc63-4d55-9377-a46dd785bb89
+ˆ	java:S112'"FDefine and throw a dedicated exception instead of using a generic one.(û¦÷§8›šÂ†2J$daac0310-a4cd-4fef-8554-3f71b56b6443
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$678e702b-bbd4-45ce-aa11-53abf735fa4a
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$4feedbac-d102-4c77-b170-27014bb009cd
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$1814fef4-13f6-40b8-b2e7-066656dad58e
-k	java:S106&"+Replace this use of System.out by a logger.(‡øŞãşÿÿÿÿJ$3b4f6696-6180-4213-922a-423808d0b1c5
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$bf72aca4-ebd4-4b02-806d-11780cdc44b4
+ƒ	java:S125,"<This block of commented-out lines of code should be removed.(à¶Ô«ùÿÿÿÿ8€†…‡2J$ff4f0352-c299-4171-af4d-86026bf9cf00
+k	java:S106G"+Replace this use of System.out by a logger.(‡øŞãşÿÿÿÿJ$2d870e22-7646-40c7-b308-278613dce11f
+|
+java:S1128"4Remove this unused import 'java.security.Timestamp'.(’ïĞ¦üÿÿÿÿ8Üª†‡2J$e0237d9c-34fb-4cd8-8296-98149f67db53

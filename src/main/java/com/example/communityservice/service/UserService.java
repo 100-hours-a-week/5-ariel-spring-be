@@ -8,7 +8,14 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.security.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -22,10 +29,36 @@ public class UserService implements UserDetailsService {
     @Autowired
     private PasswordEncoder passwordEncoder; // PasswordEncoder 빈을 주입받습니다.
 
+    private final Path fileStorageLocation;
+
+    public UserService() {
+        this.fileStorageLocation = Paths.get("uploads").toAbsolutePath().normalize(); // Ensure the path is correct and exists
+        try {
+            Files.createDirectories(this.fileStorageLocation);
+        } catch (Exception ex) {
+            throw new RuntimeException("Could not create the directory where the uploaded files will be stored.", ex);
+        }
+    }
+
     // 사용자 정보를 저장하는 메서드
+//    public void save(User user) {
+//        user.setPassword(passwordEncoder.encode(user.getPassword())); // 비밀번호를 암호화합니다.
+//        userRepository.save(user); // 사용자 정보를 데이터베이스에 저장합니다.
+//    }
+
     public void save(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword())); // 비밀번호를 암호화합니다.
-        userRepository.save(user); // 사용자 정보를 데이터베이스에 저장합니다.
+        if (user.getUserId() != null) { // 기존 사용자 정보 업데이트
+            User existingUser = userRepository.findById(user.getUserId()).orElse(null);
+            if (existingUser != null) {
+                existingUser.setNickname(user.getNickname());
+                existingUser.setProfilePicture(user.getProfilePicture());
+                //existingUser.setUpdatedAt(new Timestamp(System.currentTimeMillis())); // 현재 시간으로 업데이트
+            }
+            userRepository.save(existingUser);
+        } else { // 새 사용자 등록
+            user.setPassword(passwordEncoder.encode(user.getPassword())); // 신규 등록 시 비밀번호 암호화
+            userRepository.save(user);
+        }
     }
 
     // 이메일로 사용자를 찾는 메서드
@@ -56,5 +89,12 @@ public class UserService implements UserDetailsService {
     public User registerUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword())); // 비밀번호를 암호화합니다.
         return userRepository.save(user); // 사용자 정보를 데이터베이스에 저장합니다.
+    }
+
+    public String storeFile(MultipartFile file) throws IOException {
+        String fileName = file.getOriginalFilename();
+        Path targetLocation = this.fileStorageLocation.resolve(fileName);
+        Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
+        return fileName;
     }
 }

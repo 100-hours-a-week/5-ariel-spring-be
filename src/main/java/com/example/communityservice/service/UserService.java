@@ -97,4 +97,17 @@ public class UserService implements UserDetailsService {
         Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
         return fileName;
     }
+
+    // 비밀번호 변경
+    public boolean updatePassword(String email, String newPassword) {
+        Optional<User> userOptional = findByEmail(email);
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            String encodedPassword = passwordEncoder.encode(newPassword);
+            user.setPassword(encodedPassword);
+            userRepository.save(user);
+            return true;
+        }
+        return false;
+    }
 }

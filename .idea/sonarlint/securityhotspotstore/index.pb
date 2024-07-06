@@ -759,3 +759,5 @@ G.idea/sonarlint/issuestore/c/9/c95740aecd481f856c4db0281378b18fe81c01a4,3/c/3c
 Lsrc/main/java/com/example/communityservice/controller/CommentController.java,3/8/38f61bfd0de13b6efcf5c9af6c212406c3b9ac31
 y
 Isrc/main/java/com/example/communityservice/controller/UserController.java,1/6/1662cc1a1446e496166909d2da704a0878d4e719
+y
+Isrc/main/java/com/example/communityservice/dto/PasswordUpdateRequest.java,2/b/2bdcf242fcf8400d861e6298bdf3bce4e4d4d86f

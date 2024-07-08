@@ -1,5 +1,7 @@
 
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ñ×ß†‰2J$2a8e19cc-4489-45a9-a411-6607da097f0b
 q
-java:S18749".Remove this use of "parser"; it is deprecated.(¹Ñº¹8ØŠì„2J$8119dc1d-e35c-42c4-9190-7ba2452c30a0
+java:S1874>".Remove this use of "parser"; it is deprecated.(¹Ñº¹8ØŠì„2J$89860bf2-1892-442b-8888-aab6cefc935f
 x
-java:S1874:"5Remove this use of "setSigningKey"; it is deprecated.(È©‘”8ÙŠì„2J$25369102-c691-4118-8279-cf8c83ba0283
+java:S1874?"5Remove this use of "setSigningKey"; it is deprecated.(È©‘”8ÙŠì„2J$11754e5f-2d70-4979-bfc2-dd882a2eb2b5

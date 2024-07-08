@@ -5,6 +5,7 @@ import com.example.communityservice.model.User;
 import com.example.communityservice.repository.UserRepository;
 import com.example.communityservice.security.JwtTokenProvider;
 import com.example.communityservice.service.FileStorageService;
+import com.example.communityservice.service.JwtBlacklistService;
 import com.example.communityservice.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,9 @@ public class AuthController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private JwtBlacklistService jwtBlacklistService;
 
     @GetMapping("/user-info")
     public ResponseEntity<UserDTO> getUserInfo(HttpServletRequest request) {
@@ -100,6 +104,17 @@ public class AuthController {
             System.out.println("User not found with email: " + user.getEmail());
         }
         return ResponseEntity.status(401).body("Invalid email or password");
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<String> logout(HttpServletRequest request) {
+        String token = jwtTokenProvider.resolveToken(request);
+        if (token != null && jwtTokenProvider.validateToken(token)) {
+            jwtBlacklistService.blacklistToken(token);
+            return ResponseEntity.ok("Logout successful");
+        } else {
+            return ResponseEntity.status(400).body("Invalid token");
+        }
     }
 
 

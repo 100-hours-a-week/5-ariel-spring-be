@@ -1,7 +1,9 @@
 package com.example.communityservice.security;
 
+import com.example.communityservice.service.JwtBlacklistService;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
@@ -22,6 +24,9 @@ public class JwtTokenProvider {
     private int jwtExpiration;
 
     private Key key;
+
+    @Autowired
+    private JwtBlacklistService jwtBlacklistService;
 
     @PostConstruct
     public void init() {
@@ -71,6 +76,9 @@ public class JwtTokenProvider {
     }
 
     public boolean validateToken(String authToken) {
+        if (jwtBlacklistService.isTokenBlacklisted(authToken)) {
+            return false;
+        }
         try {
             Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(authToken);
             return true;

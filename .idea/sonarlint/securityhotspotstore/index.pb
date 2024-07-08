@@ -761,3 +761,5 @@ y
 Isrc/main/java/com/example/communityservice/controller/UserController.java,1/6/1662cc1a1446e496166909d2da704a0878d4e719
 y
 Isrc/main/java/com/example/communityservice/dto/PasswordUpdateRequest.java,2/b/2bdcf242fcf8400d861e6298bdf3bce4e4d4d86f
+{
+Ksrc/main/java/com/example/communityservice/service/JwtBlacklistService.java,e/b/ebf7fafea529c7090eaa2b675ceee97c32ed14d4

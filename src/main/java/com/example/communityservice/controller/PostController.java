@@ -2,8 +2,10 @@ package com.example.communityservice.controller;
 
 import com.example.communityservice.dto.CommentDTO;
 import com.example.communityservice.dto.PostDTO;
+import com.example.communityservice.dto.UserDTO;
 import com.example.communityservice.model.Post;
 import com.example.communityservice.model.User;
+import com.example.communityservice.repository.PostRepository;
 import com.example.communityservice.repository.UserRepository;
 import com.example.communityservice.security.JwtTokenProvider;
 import com.example.communityservice.service.CommentService;
@@ -24,6 +26,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/posts")
@@ -44,12 +47,47 @@ public class PostController {
     private UserRepository userRepository;
 
     @Autowired
+    private PostRepository postRepository;
+
+    @Autowired
     private JwtTokenProvider jwtTokenProvider;
 
+//    @GetMapping
+//    public ResponseEntity<List<PostDTO>> getAllPosts() {
+//        List<PostDTO> posts = postService.getAllPosts();
+//        return ResponseEntity.ok(posts);
+//    }
+
     @GetMapping
-    public ResponseEntity<List<PostDTO>> getAllPosts() {
-        List<PostDTO> posts = postService.getAllPosts();
-        return ResponseEntity.ok(posts);
+    public ResponseEntity<List<PostDTO>> getPosts() {
+        List<Object[]> postsWithComments = postRepository.findAllPostsWithCommentsCount();
+        List<PostDTO> postDTOs = postsWithComments.stream()
+                .map(obj -> {
+                    Post post = (Post) obj[0];
+                    Long commentsCount = (Long) obj[1];
+
+                    UserDTO userDTO = convertToUserDTO(post.getUser());
+
+                    PostDTO dto = new PostDTO();
+                    dto.setPostId(post.getPostId());
+                    dto.setTitle(post.getTitle());
+                    dto.setLikesCount(post.getLikesCount());
+                    dto.setViewsCount(post.getViewsCount());
+                    dto.setUser(userDTO); // UserDTO 설정
+                    dto.setCommentsCount(commentsCount.intValue()); // 댓글 수 설정
+                    return dto;
+                })
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(postDTOs);
+    }
+
+    private UserDTO convertToUserDTO(User user) {
+        UserDTO userDTO = new UserDTO();
+        userDTO.setUserId(user.getUserId());
+        userDTO.setNickname(user.getNickname());
+        userDTO.setProfilePicture(user.getProfilePicture());
+        return userDTO;
     }
 
     @GetMapping("/{postId}")

@@ -91,6 +91,16 @@ public class UserService implements UserDetailsService {
         return userRepository.save(user); // 사용자 정보를 데이터베이스에 저장합니다.
     }
 
+    public boolean deleteUserByEmail(String email) {
+        Optional<User> userOptional = userRepository.findByEmail(email);
+        if (userOptional.isPresent()) {
+            userRepository.delete(userOptional.get());
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public String storeFile(MultipartFile file) throws IOException {
         String fileName = file.getOriginalFilename();
         Path targetLocation = this.fileStorageLocation.resolve(fileName);

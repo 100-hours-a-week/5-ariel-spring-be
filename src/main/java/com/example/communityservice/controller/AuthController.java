@@ -19,6 +19,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -116,6 +117,35 @@ public class AuthController {
             return ResponseEntity.status(400).body("Invalid token");
         }
     }
+
+    @DeleteMapping("/withdraw")
+    public ResponseEntity<Map<String, String>> withdraw(HttpServletRequest request) {
+        String token = jwtTokenProvider.resolveToken(request);
+        Map<String, String> response = new HashMap<>();
+
+        if (token == null || !jwtTokenProvider.validateToken(token)) {
+            response.put("message", "Unauthorized access.");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
+        }
+
+        String email = jwtTokenProvider.getUsername(token);
+        try {
+            boolean userDeleted = userService.deleteUserByEmail(email);
+            if (userDeleted) {
+                jwtBlacklistService.blacklistToken(token);
+                response.put("message", "User deleted successfully");
+                return ResponseEntity.ok(response);
+            } else {
+                response.put("message", "User not found");
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+            }
+        } catch (Exception e) {
+            response.put("message", "Failed to withdraw user");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
+    }
+
+
 
 
     @PostMapping("/register")

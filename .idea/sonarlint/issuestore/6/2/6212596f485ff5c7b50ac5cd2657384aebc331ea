@@ -1,34 +1,34 @@
 
-V
-java:S2589£"8Remove this expression which always evaluates to "false"(Äïˆû8è‚™òŒ2
-d
-java:S1192¤"FDefine a constant instead of duplicating this literal "error" 3 times.(ıø»¥8ë‚™òŒ2
-k
-java:S1192"HDefine a constant instead of duplicating this literal "message" 4 times.(èÔ« ûÿÿÿÿ8ë‚™òŒ2
-e
-java:S1192v"HDefine a constant instead of duplicating this literal "success" 3 times.(ˆâ½˜8ë‚™òŒ2
-p
-java:S1192“"MDefine a constant instead of duplicating this literal "Unauthorized" 4 times.(‹ôÕÀüÿÿÿÿ8ë‚™òŒ2
-_
-java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄŞ8ì‚™òŒ2
-_
-java:S6813("BRemove this field injection and use constructor injection instead.(êæÄŞ8ì‚™òŒ2
-_
-java:S6813+"BRemove this field injection and use constructor injection instead.(êæÄŞ8ì‚™òŒ2
-_
-java:S6813."BRemove this field injection and use constructor injection instead.(êæÄŞ8ì‚™òŒ2
-_
-java:S68131"BRemove this field injection and use constructor injection instead.(êæÄŞ8ì‚™òŒ2
-_
-java:S68134"BRemove this field injection and use constructor injection instead.(êæÄŞ8ì‚™òŒ2
-]	java:S1258"<This block of commented-out lines of code should be removed.(’¶úùÿÿÿÿ8ï‚™òŒ2
-—
-java:S6204P"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹8ï‚™òŒ2
+|
+java:S2589£"8Remove this expression which always evaluates to "false"(Äïˆû8è‚™òŒ2J$94f1716d-4874-4c1a-9c33-b35275dc20dc
+Š
+java:S1192¤"FDefine a constant instead of duplicating this literal "error" 3 times.(ıø»¥8ë‚™òŒ2J$f5c2ab83-37fc-4eca-822c-75375267079e
+‘
+java:S1192"HDefine a constant instead of duplicating this literal "message" 4 times.(Â•ğˆùÿÿÿÿ8ë‚™òŒ2J$943e7da3-6c3f-4ca2-b026-96f160ba50ba
+‹
+java:S1192v"HDefine a constant instead of duplicating this literal "success" 3 times.(ˆâ½˜8ë‚™òŒ2J$b9fea98d-4e53-4f3e-81fd-71bf53ace430
+–
+java:S1192“"MDefine a constant instead of duplicating this literal "Unauthorized" 4 times.(‹ôÕÀüÿÿÿÿ8ë‚™òŒ2J$adf45552-1a88-4f0b-a464-18090a96a4b8
+…
+java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄŞ8ì‚™òŒ2J$c261b573-0bd6-4d1a-9f92-686bd9b7570f
+…
+java:S6813("BRemove this field injection and use constructor injection instead.(êæÄŞ8ì‚™òŒ2J$a419176f-5448-4fe7-bbdf-6ee6dad3dec9
+…
+java:S6813+"BRemove this field injection and use constructor injection instead.(êæÄŞ8ì‚™òŒ2J$b4ef0f23-7b37-4928-8120-6117c1bd2251
+…
+java:S6813."BRemove this field injection and use constructor injection instead.(êæÄŞ8ì‚™òŒ2J$de245ef1-cb88-41f4-8be6-fe2606339cf8
+…
+java:S68131"BRemove this field injection and use constructor injection instead.(êæÄŞ8ì‚™òŒ2J$a42c990b-bc61-4c25-a85b-d27971be0e62
+…
+java:S68134"BRemove this field injection and use constructor injection instead.(êæÄŞ8ì‚™òŒ2J$bc782a74-3a51-4084-ab86-589abd3915c7
+ƒ	java:S1258"<This block of commented-out lines of code should be removed.(’¶úùÿÿÿÿ8ï‚™òŒ2J$19706c08-ec78-4f36-ad8c-81ecb1c2d584
+½
+java:S6204P"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹8ï‚™òŒ2J$517fb415-e689-42aa-930e-92ed246cc906
 }
-java:S3400Ê"9Remove this method and declare a constant for this value.(âÌĞË8¹õ¦…2J$414a4736-9f41-4590-a6c0-33d9c4769cc8
+java:S3400Ê"9Remove this method and declare a constant for this value.(âÌĞË8¹õ¦…2J$2a471eb8-6dbd-4f84-b54a-c89426a64833
 p
-java:S1172È",Remove this unused method parameter "token".(—ÜÈ™8¹õ¦…2J$42079954-ad91-4962-8b90-65bcf5265815
-Y
-java:S1128"=Remove this unused import 'jakarta.servlet.http.HttpSession'.(Çê°8ö‚™òŒ2
-R
-java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8ö‚™òŒ2
+java:S1172È",Remove this unused method parameter "token".(—ÜÈ™8¹õ¦…2J$e04312c7-9349-4d55-88d0-464aefe68368
+
+java:S1128"=Remove this unused import 'jakarta.servlet.http.HttpSession'.(Çê°8ö‚™òŒ2J$ed8d515c-90e3-44fb-8d97-51179107ccc8
+x
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8ö‚™òŒ2J$9e50b179-aded-4d93-addf-b6dc27d2a465

@@ -139,7 +139,7 @@ public class PostController {
 
                 boolean success = postService.createPost(title, content, imagePath, email);
                 if (success) {
-                    return ResponseEntity.ok(Collections.singletonMap("message", "Post created successfully"));
+                    return ResponseEntity.ok(Collections.singletonMap("message", "게시글이 성공적으로 등록되었습니다."));
                 } else {
                     return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Collections.singletonMap("message", "Error creating post"));
                 }

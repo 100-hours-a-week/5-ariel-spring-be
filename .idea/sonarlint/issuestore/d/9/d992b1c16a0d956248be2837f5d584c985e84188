@@ -1,21 +1,21 @@
 
 
-java:S1192"HDefine a constant instead of duplicating this literal "message" 4 times.(Í„†áøÿÿÿÿ8­›îª‰2J$7598f9d3-9d3f-41cf-931f-f1f142fffceb
+java:S1192"HDefine a constant instead of duplicating this literal "message" 4 times.(Í„†áøÿÿÿÿ8­›îª‰2J$c098ad0b-651c-4396-9e8d-2dc55f556b3e
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$1db0d3c3-7f76-47a6-b5bd-ada80e433d56
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$21028edd-863c-4252-88a0-f9999bfdfb86
 ~
-java:S6813""BRemove this field injection and use constructor injection instead.(êæÄŞJ$38bb377a-745a-455c-b0d6-ff62d1627b58
+java:S6813""BRemove this field injection and use constructor injection instead.(êæÄŞJ$ad40734b-dfbc-4101-89e2-c5756d2b25b4
 ~
-java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄŞJ$d8c94d2b-056b-44de-9bd0-dfdba11d2ff3
+java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄŞJ$6cd98620-11aa-4835-9a63-89b10a55c081
 ~
-java:S6813("BRemove this field injection and use constructor injection instead.(êæÄŞJ$7c775701-e119-465a-b91b-f9b065a5d8b4
+java:S6813("BRemove this field injection and use constructor injection instead.(êæÄŞJ$18bcbf10-cd74-4257-8aa2-4a2ba03f7c05
 …
-java:S6813+"BRemove this field injection and use constructor injection instead.(êæÄŞ8‚ğæ„2J$aeb92da6-00bd-40a7-859b-c0a5297a233c
+java:S6813+"BRemove this field injection and use constructor injection instead.(êæÄŞ8‚ğæ„2J$67f5c086-21ce-43d4-8f3d-db83343d0bf2
 …
-java:S6813."BRemove this field injection and use constructor injection instead.(êæÄŞ8øÁÒ†‰2J$e09016aa-7fa8-4c06-b63a-23247a7d1923
+java:S6813."BRemove this field injection and use constructor injection instead.(êæÄŞ8øÁÒ†‰2J$f500d691-69b2-4f2e-a687-e096e17b0c4c
 n
-java:S1452E"&Remove usage of generic wildcard type.(Ş¡õÂùÿÿÿÿ8ÊöÂ­ƒ2J$131a9d6c-f026-4fc5-b3b9-323caed85469
+java:S1452E"&Remove usage of generic wildcard type.(Ş¡õÂùÿÿÿÿ8ÊöÂ­ƒ2J$da7dfb01-b9fe-4f5a-9551-c2e31dd857f8
 ˜
-java:S6201H"PReplace this instanceof check and cast with 'instanceof UserDetails userdetails'(¶Ş¿Œıÿÿÿÿ8ÊöÂ­ƒ2J$1f0c31d9-646e-4cf9-8a29-b1e41d911a75
-f	java:S106f"+Replace this use of System.out by a logger.(°ƒ®J$65035c75-880c-4e1c-9dbb-4f0c976be6f8
-f	java:S106i"+Replace this use of System.out by a logger.(¤àƒJ$a4720fcc-07eb-4dac-a505-19eefc51d140
+java:S6201H"PReplace this instanceof check and cast with 'instanceof UserDetails userdetails'(¶Ş¿Œıÿÿÿÿ8ÊöÂ­ƒ2J$54c467e1-86f1-47b5-b573-9b3d5e8173ba
+f	java:S106f"+Replace this use of System.out by a logger.(°ƒ®J$e346581a-84f3-4110-966f-4b7c2f1b70e4
+f	java:S106i"+Replace this use of System.out by a logger.(¤àƒJ$533a4f1d-c3de-4724-8658-2bdef32d2ddf
